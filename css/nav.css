@@ -1,22 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-
-:root {
-  --blue: #053b6d;
-  --gold: #ffb72d;
-  --white: #fbfbfb;
-  --black: #000;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "Luckiest Guy", cursive;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
 nav {
   background-color: var(--blue);
   color: var(--white);

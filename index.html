@@ -7,26 +7,18 @@
     <title>Tutor ZSTI</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/footer.css" />
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <div class="logo">
-          <a href="index.html"
-            ><img src="assets/images/logo.svg" alt="logo"
-          /></a>
-        </div>
-        <div class="links">
-          <a href="#">Szukaj korepetycji</a>
-          <a href="#">Zostan korepetytorem</a>
-          <a href="#">Regulamin</a>
-        </div>
-        <div class="login">
-          <a href="register.php"
-            ><img src="assets/icons/Sign_in_squre_fill.png" alt="login"
-          /></a>
-        </div>
-      </div>
+    <nav id="nav-container">
+      <script>
+        fetch("pages/templates/index-nav.php")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("nav-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error:", error));
+      </script>
     </nav>
     <div class="banner">
       <div class="column">
@@ -83,13 +75,15 @@
         </div>
       </div>
     </div>
-    <footer>
-      <p>&copy; 2024 TutorZSTI</p>
-      <div class="footer-links">
-        <a href="#">Centrum prawne</a>
-        <a href="#">Polityka prywatnosci</a>
-        <a href="#">Polityka plików cookie</a>
-      </div>
+    <footer id="footer-container">
+      <script>
+        fetch("pages/templates/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error:", error));
+      </script>
     </footer>
   </body>
 </html>

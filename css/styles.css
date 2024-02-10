@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+:root {
+  --blue: #053b6d;
+  --gold: #ffb72d;
+  --white: #fbfbfb;
+  --black: #000;
+  --grey: #acacac;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Luckiest Guy", cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .banner {
   background-color: var(--blue);
   display: flex;
@@ -107,27 +127,112 @@ button:hover {
   text-align: center;
   flex-grow: 1;
 }
-
-footer {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  padding: 10px;
+.login-container {
   background-color: var(--blue);
-  color: var(--white);
-  font-size: 24px;
-}
-
-footer p {
-  padding-left: 20px;
-}
-
-.footer-links {
+  height: 950px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* Wyśrodkowanie zawartości poziomo */
+  align-items: center; /* Wyśrodkowanie zawartości pionowo */
 }
 
-footer a {
+.column-40,
+.column-60 {
+  display: flex;
+  flex-direction: column; /* Ustawienie układu kolumnowego */
+  align-items: center; /* Wyśrodkowanie zawartości poziomo */
+}
+
+.column-40 {
+  width: 50%; /* Zajmowanie 40% szerokości kontenera */
+}
+
+.column-60 {
+  width: 50%; /* Zajmowanie 60% szerokości kontenera */
+}
+
+.column-60 h1 {
   color: var(--white);
+  font-size: 64px;
+  margin: 0;
+  text-align: center;
+  align-self: center;
+}
+
+.column-60 label {
+  color: var(--white);
+  font-size: 32px;
+  margin-bottom: 10px;
+  align-self: self-start;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Ustawienie układu kolumnowego */
+  gap: 25px; /* Odstęp między elementami */
+  align-items: center; /* Wyśrodkowanie zawartości poziomo */
+  width: 80%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  height: 55px;
+  align-self: flex-start;
+  border: 2px solid var(--grey);
+  border-radius: 3px;
+}
+
+button[type="submit"] {
+  background-color: var(--gold);
+  padding: 5px 10px;
+  color: var(--white);
+  text-align: center;
+  font-size: 32px;
+}
+
+span {
+  color: var(--grey);
+  font-size: 15px;
+  align-self: flex-start;
+}
+span a {
+  color: var(--gold);
   text-decoration: underline;
+}
+.checkbox-container {
+  display: flex;
+  align-self: self-start;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.styled-checkbox {
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  border: var(--white) 2px solid;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+
+.styled-checkbox:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hidden-checkbox:checked + .styled-checkbox:after {
+  opacity: 1;
 }
