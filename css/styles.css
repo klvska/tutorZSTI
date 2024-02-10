@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+:root {
+  --blue: #053b6d;
+  --gold: #ffb72d;
+  --white: #fbfbfb;
+  --black: #000;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Luckiest Guy", cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 24px;
+}
+
+.container {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  position: relative;
+  left: 0;
+  margin-left: 20px;
+  padding: 0;
+  flex: 1 0 100%;
+  text-align: center;
+}
+
+.links {
+  flex: 1 0 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.links a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 80px;
+}
+a:hover {
+  color: var(--gold);
+}
+
+.login {
+  flex: 1 0 100%;
+  text-align: center;
+}
+.banner {
+  background-color: var(--blue);
+  display: flex;
+  height: 400px;
+}
+
+.column:first-child {
+  flex: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.column:last-child {
+  flex: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.column:first-child h1 {
+  font-size: 112px;
+  margin: 0;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  border-radius: 15px;
+  width: 445px;
+  height: 77px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.subject-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  height: 400px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  width: 60%;
+  margin: auto;
+}
+
+.category {
+  background-image: linear-gradient(
+    rgba(255, 183, 45, 0.9),
+    rgba(255, 183, 45, 2)
+  );
+  border: 2px solid var(--black);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 375px;
+  height: 125px;
+  border-radius: 15px;
+  font-size: 32px;
+}
+
+.category img {
+  margin-right: 10px;
+}
+.more {
+  grid-column: 1/2;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.more a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.more a:hover {
+  color: var(--gold);
+}
+
+.category p {
+  text-align: center;
+  flex-grow: 1;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 24px;
+}
+
+footer p {
+  padding-left: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .logo,
+  .links,
+  .login {
+    flex: none;
+  }
+
+  .logo {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .login {
+    text-align: right;
+  }
+}
