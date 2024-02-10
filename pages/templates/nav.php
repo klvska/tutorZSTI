@@ -5,9 +5,9 @@
     /></a>
   </div>
   <div class="links">
-    <a href="#">Szukaj korepetycji</a>
+    <a href="./subjects.html">Szukaj korepetycji</a>
     <a href="#">Zostan korepetytorem</a>
-    <a href="#">Regulamin</a>
+    <a href="../assets/pdf/Regulamin.pdf" target="_blank">Regulamin</a>
   </div>
   <div class="login">
     <a href="login.html"

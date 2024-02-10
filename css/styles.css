@@ -23,6 +23,9 @@ body {
   display: flex;
   height: 400px;
 }
+.banner a {
+  text-decoration: none;
+}
 
 .column:first-child {
   flex: 60%;
@@ -58,11 +61,16 @@ button {
   color: var(--black);
   border: none;
   border-radius: 15px;
-  width: 445px;
+  width: 500px;
   height: 77px;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
+}
+
+button a {
+  text-decoration: none;
+  color: var(--black);
 }
 
 button:hover {
@@ -74,7 +82,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-  height: 400px;
+  height: 600px;
 }
 .categories {
   display: grid;

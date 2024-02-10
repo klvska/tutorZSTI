@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon" />
     <title>Tutor ZSTI</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
   </head>
   <body>
     <nav id="nav-container">
       <script>
-        fetch("pages/templates/index-nav.php")
+        fetch("templates/nav.php")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("nav-container").innerHTML = data;
@@ -20,67 +20,67 @@
           .catch((error) => console.error("Error:", error));
       </script>
     </nav>
-    <div class="banner">
-      <div class="column">
-        <h1>Przestan byc nieukiem</h1>
-        <a href="#categories">
-          <button>
-            szukaj korepetycji
-            <img src="assets/icons/Arrow 2.png" alt="arrow" />
-          </button>
-        </a>
-      </div>
-      <div class="column">
-        <img src="assets/images/tutors-hero@2x 1.png" alt="Banner-Image" />
-      </div>
-    </div>
     <div class="subject-container">
-      <div class="categories" id="categories">
+      <div class="categories">
         <a href="#">
           <button class="category">
-            <img src="assets/icons/calculator.png" alt="math" />
+            <img src="../assets/icons/calculator.png" alt="math" />
             <p>Matematyka</p>
           </button>
         </a>
         <a href="#">
           <button class="category">
-            <img src="assets/icons/book-closed.png" alt="polish" />
+            <img src="../assets/icons/book-closed.png" alt="polish" />
             <p>J. Polski</p>
           </button>
         </a>
         <a href="#">
           <button class="category">
-            <img src="assets/icons/book-closed.png" alt="english" />
+            <img src="../assets/icons/book-closed.png" alt="english" />
             <p>J. Angielski</p>
           </button>
         </a>
         <a href="#">
           <button class="category">
-            <img src="assets/icons/beaker-01.png" alt="chemistry" />
+            <img src="../assets/icons/beaker-01.png" alt="chemistry" />
             <p>Chemia</p>
           </button>
         </a>
         <a href="#">
           <button class="category">
-            <img src="assets/icons/atom-01.png" alt="physics" />
+            <img src="../assets/icons/atom-01.png" alt="physics" />
             <p>Fizyka</p>
           </button>
         </a>
         <a href="#">
           <button class="category">
-            <img src="assets/icons/microscope.png" alt="biology" />
+            <img src="../assets/icons/microscope.png" alt="biology" />
             <p>Biologia</p>
           </button>
         </a>
-        <div class="more">
-          <img src="assets/icons/plus.png" alt="+" />
-          <a href="pages/subjects.html">Wiecej</a>
-        </div>
+        <a href="#">
+          <button class="category">
+            <img src="../assets/icons/globe-slated-02.png" alt="geography" />
+            <p>Geografia</p>
+          </button>
+        </a>
+        <a href="#">
+          <button class="category">
+            <img src="../assets/icons/glasses-02.png" alt="history" />
+            <p>Historia</p>
+          </button>
+        </a>
+        <a href="#">
+          <button class="category">
+            <img src="../assets/icons/code-snippet-02.png" alt="coding" />
+            <p>Informatyka</p>
+          </button>
+        </a>
       </div>
     </div>
     <footer id="footer-container">
       <script>
-        fetch("pages/templates/index-footer.html")
+        fetch("templates/footer.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("footer-container").innerHTML = data;

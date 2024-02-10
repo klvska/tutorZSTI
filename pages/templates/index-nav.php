@@ -3,9 +3,9 @@
     <a href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
   </div>
   <div class="links">
-    <a href="#">Szukaj korepetycji</a>
+    <a href="pages/subjects.html">Szukaj korepetycji</a>
     <a href="#">Zostan korepetytorem</a>
-    <a href="#">Regulamin</a>
+    <a href="assets/pdf/Regulamin.pdf" target="_blank">Regulamin</a>
   </div>
  <?php
 session_start();
