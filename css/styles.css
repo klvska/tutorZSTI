@@ -1,65 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-
-:root {
-  --blue: #053b6d;
-  --gold: #ffb72d;
-  --white: #fbfbfb;
-  --black: #000;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "Luckiest Guy", cursive;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-nav {
-  background-color: var(--blue);
-  color: var(--white);
-  padding: 10px 0;
-  font-size: 24px;
-}
-
-.container {
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo {
-  position: relative;
-  left: 0;
-  margin-left: 20px;
-  padding: 0;
-  flex: 1 0 100%;
-  text-align: center;
-}
-
-.links {
-  flex: 1 0 100%;
-  text-align: center;
-  margin: 10px 0;
-}
-
-.links a {
-  color: var(--white);
-  text-decoration: none;
-  margin: 0 80px;
-}
-a:hover {
-  color: var(--gold);
-}
-
-.login {
-  flex: 1 0 100%;
-  text-align: center;
-}
 .banner {
   background-color: var(--blue);
   display: flex;
@@ -122,9 +60,12 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
-  width: 60%;
+  gap: 40px;
   margin: auto;
+}
+
+.categories a {
+  text-decoration: none;
 }
 
 .category {
@@ -189,21 +130,4 @@ footer p {
 footer a {
   color: var(--white);
   text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  .logo,
-  .links,
-  .login {
-    flex: none;
-  }
-
-  .logo {
-    text-align: left;
-    margin-left: 20px;
-  }
-
-  .login {
-    text-align: right;
-  }
 }
