@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Wykonanie zapytania
         if ($conn->query($sql) === TRUE) {
             echo "Registration successful";
+            header("Location: ../login.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -35,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Wyświetlenie błędów rejestracji
         foreach ($errors as $error) {
             echo $error . "<br>";
+            header("Location: ../login.php");
         }
     }
 }
