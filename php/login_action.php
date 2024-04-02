@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = $user['PasswordHash'];
 
         if (password_verify($password, $hashed_password)) {
+            $_SESSION["user_id"] = $user['UserID'];
+            $_SESSION["username"] = $user['Username'];
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $email;
             header("location: ../index.php");
