@@ -17,7 +17,7 @@
             <div class="banner-content">
             <div class="banner-text">
                 <h1>przestan byc <br> nieukiem</h1>
-                <a href="#" class="banner-btn">
+                <a href="subjects.php" class="banner-btn">
                     <span>
                         Szukaj korepetycji
                         <?php echo file_get_contents("assets/icons/arrow-right-large.svg"); ?>

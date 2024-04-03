@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     $f_name = $_POST["f_name"];
     $s_name = $_POST["s_name"];
     $subject = $_POST["subject"];
-    $skype = $_POST["skype"];
-    $discord = $_POST["discord"];
-    $teams = $_POST["teams"];
+    $skype = !empty($_POST["skype"]) ? $_POST["skype"] : null;
+    $discord = !empty($_POST["discord"]) ? $_POST["discord"] : null;
+    $teams = !empty($_POST["teams"]) ? $_POST["teams"] : null;
     $topics = $_POST["topics"];
     $about_me = $_POST["about_me"];
 
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New record created successfully";
+        header("Location: ../success.php");
     } else {
         echo "Error: " . $stmt->error;
     }

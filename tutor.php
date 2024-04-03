@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="about_me">Przedstaw sie</label>
-                    <textarea id="about_me" name="about_me" placeholder="Czesc! Jestem [Imie], uczniem z pasja do ..." required maxlength="300"></textarea>
+                    <textarea id="about_me" name="about_me" placeholder="Czesc! Jestem [Imie], uczniem z pasja do ..." required maxlength="250"></textarea>
                     <input class="tutor-submit" type="submit" value="Zostan korepetytorem">
                 </div>
             </form>
