@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
     $date = $_POST['date'];
 
     // Przesłanie pliku na serwer
-    $uploads_dir = 'uploads/';
+    $uploads_dir = '../assets/uploads/';
     $file_name = $_FILES['file']['name'];
     $file_tmp = $_FILES['file']['tmp_name'];
     move_uploaded_file($file_tmp, "$uploads_dir/$file_name");

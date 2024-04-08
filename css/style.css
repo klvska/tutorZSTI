@@ -550,7 +550,6 @@ form p {
 .profile-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   width: 100%;
   flex-wrap: nowrap;
@@ -560,7 +559,6 @@ form p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 50%;
   flex-wrap: nowrap;
 }
@@ -804,12 +802,211 @@ form p {
 .hidden {
   display: none;
 }
-
-#newLessonForm,
-#lessonDetails {
+.profile-lessons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+.profile-lessons h1 {
+  align-self: flex-start;
+  font-size: 36px;
+  font-weight: 400;
+}
+.lesson-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
   margin-top: 20px;
 }
+.lesson-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding: 20px;
+  border: 2px solid var(--black);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000;
+}
 
-#lessonDetails p {
-  margin-bottom: 10px;
+.lesson-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 50%;
+  flex-wrap: nowrap;
+}
+.lesson-title h4 {
+  font-size: 24px;
+  margin: 0;
+}
+.lesson-title p {
+  color: var(--gold);
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.lesson-author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 30%;
+  flex-wrap: nowrap;
+}
+.lesson-author span {
+  font-size: 24px;
+  margin: 0;
+}
+.lesson-author p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--gold);
+}
+.lesson-likes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 20%;
+  flex-wrap: nowrap;
+}
+.lesson-likes p {
+  font-size: 20px;
+  margin: 0 10px 0 0;
+}
+.lesson-likes img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.full-lesson-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+.full-lesson-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 50%;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  border: solid 2px var(--black);
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 500px;
+}
+.full-lesson-text form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.full-lesson-text form button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--black);
+  border-radius: 15px;
+  margin: 20px;
+  padding: 15px 80px;
+  color: var(--black);
+  text-align: center;
+  font-size: var(--font-32);
+  transition: all 0.3s ease;
+}
+.full-lesson-text form button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.full-lesson-text form button img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+.full-lesson-text h1 {
+  font-size: 36px;
+  margin: 0;
+}
+.full-lesson-text a {
+  color: var(--gold);
+  text-decoration: underline;
+  font-size: 24px;
+  text-align: center;
+  align-self: center;
+}
+.file {
+  align-self: flex-start !important;
+  font-size: 36px;
+  color: var(--gold);
+  text-decoration: underline black solid 2px;
+}
+.full-lesson-author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.full-lesson-author p {
+  font-size: 20px;
+  margin: 0;
+}
+.full-lesson-author span {
+  color: var(--gold);
+  font-size: 20px;
+  margin: 0;
+}
+.lesson-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin: 0;
+  color: var(--gold);
+  font-size: 24px;
+}
+.lesson-content span {
+  color: var(--black);
+  font-size: 20px;
+  margin: 10px 0 0 0;
+}
+.add-lesson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  text-decoration: none;
+  border: 2px solid var(--white);
+  border-radius: 15px;
+  margin: 0 auto;
+  width: auto;
+  padding: 20px 40px;
+  color: var(--gold);
+  background-color: var(--blue);
 }

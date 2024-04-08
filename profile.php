@@ -35,6 +35,7 @@
                             $skype = $row["skype"];
                             $discord = $row["discord"];
                             $teams = $row["teams"];
+                            $_SESSION["tutor_id"] = $row["id"];
                         
                             echo "<div class='profile-info'>";
                             echo "<h3>Informacje</h3>";
@@ -72,11 +73,50 @@
                     }
         ?>
             </div>
-        <div id="calendar"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-            <script src="script.js"></script>
+            <div class="profile-lessons">
+                <h1>Twoje lekcje: </h1>
+                <div class="lesson-container">
+                <?php
+                    $tutor_id = $_SESSION["tutor_id"];
+                    $query = "SELECT * FROM lessons WHERE tutor_id = $tutor_id";
+                    $result = mysqli_query($conn, $query);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $lesson_id = $row["id"];
+                            $lesson_author = $row["tutor_name"] . " " . $row["tutor_surname"];
+                            $lesson_title = $row["title"];
+                            $lesson_date = $row["date"];
+                            $lesson_subject = $row["subject"];
+                            $lesson_likes = $row["likes"];
+                            $lesson_dislikes = $row["dislikes"];
+
+                            
+                            echo "<a class='lesson-card' href='lesson.php?lesson=$lesson_id'>";
+                            echo "<div class='lesson-title'>";
+                            echo "<h4>$lesson_title</h4>";
+                            echo "<p>$lesson_subject</p>";
+                            echo "</div>";
+                            echo "<div class='lesson-author'>";
+                            echo "<span>$lesson_author</span>";
+                            echo "<p>$lesson_date</p>";
+                            echo "</div>";
+                            echo "<div class='lesson-likes'>";
+                            echo "<p><img src='assets/icons/like.svg'>$lesson_likes</p>";
+                            echo "<p><img src='assets/icons/dislike.svg'>$lesson_dislikes</p>";
+                            echo "</div>";
+                            echo "</a>";
+
+                            
+                        }
+                        echo "<a class='add-lesson' href='create_lesson.php'>Dodaj lekcje</a>";
+                    } else {
+                        echo "Brak lekcji.<br>";
+                        echo "<a href='create_lesson.php'>Dodaj lekcje</a>";
+                    }
+                ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

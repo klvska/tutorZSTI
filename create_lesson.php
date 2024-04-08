@@ -17,28 +17,9 @@
         <input type="file" id="file" name="file"><br><br>
         <input type="submit" value="Dodaj lekcję">
     </form>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-        $(document).ready(function () {
-            var calendar = $("#calendar").fullCalendar({
-                // Konfiguracja kalendarza
-                header: {
-                    left: "prev,next today",
-                    center: "title",
-                    right: "month,agendaWeek,agendaDay",
-                },
-                // Obsługa kliknięcia na puste pole w kalendarzu
-                dayClick: function (date, jsEvent, view) {
-                    // Ustawienie wartości daty w ukrytym polu formularza
-                    $("#date").val(date.format("YYYY-MM-DD"));
-                    // Przekierowanie do formularza tworzenia lekcji
-                    window.location.href = "create_lesson.php";
-                },
-            });
-        });
+        // Pobranie aktualnej daty i przypisanie jej do pola ukrytego
+        document.getElementById("date").value = new Date().toISOString().slice(0, 10);
     </script>
 </body>
 </html>
