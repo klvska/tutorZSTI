@@ -108,15 +108,14 @@
                             echo "</a>";
                             
                             echo "<div class='edit-lesson'>";
-                            echo "<a href='php/edit_lesson.php?lesson=$lesson_id'>Edytuj</a>";
+                            echo "<a href='edit_lesson.php?lesson=$lesson_id'>Edytuj</a>";
                             echo "<a href='php/delete_lesson.php?lesson=$lesson_id'>Usun</a>";
                             echo "</div>";
                             echo "</div>";  
                             
                         }
                     } else {
-                        echo "Brak lekcji.<br>";
-                        echo "<a href='create_lesson.php'>Dodaj lekcje</a>";
+                        echo "<h2>Brak lekcji.</h2><br>";
                     }
                 ?>
                 </div>
