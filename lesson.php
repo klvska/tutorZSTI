@@ -65,7 +65,7 @@
                                         }
                                     }
                                 }
-                                echo "<a href='profile.php'>Powrót do profilu</a>";
+                                echo "<a href='lessons.php'>Powrót</a>";
                             } else {
                                 // Jeśli lekcja nie została znaleziona, wyświetl komunikat błędu
                                 echo "Błąd: Lekcja nie została znaleziona.";

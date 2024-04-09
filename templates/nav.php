@@ -16,6 +16,9 @@
                 <a href="./tutor.php">Zostan korepetytorem</a>
               </li>
               <li>
+                <a href="./lessons.php">Lekcje/notatki</a>
+              </li>
+              <li>
                 <a href="./assets/pdf/Regulamin.pdf" target="_blank">Regulamin</a>
               </li>
             </ul>

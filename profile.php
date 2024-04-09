@@ -91,7 +91,7 @@
                             $lesson_likes = $row["likes"];
                             $lesson_dislikes = $row["dislikes"];
 
-                            
+                            echo "<div class='lesson'>";
                             echo "<a class='lesson-card' href='lesson.php?lesson=$lesson_id'>";
                             echo "<div class='lesson-title'>";
                             echo "<h4>$lesson_title</h4>";
@@ -106,16 +106,21 @@
                             echo "<p><img src='assets/icons/dislike.svg'>$lesson_dislikes</p>";
                             echo "</div>";
                             echo "</a>";
-
+                            
+                            echo "<div class='edit-lesson'>";
+                            echo "<a href='php/edit_lesson.php?lesson=$lesson_id'>Edytuj</a>";
+                            echo "<a href='php/delete_lesson.php?lesson=$lesson_id'>Usun</a>";
+                            echo "</div>";
+                            echo "</div>";  
                             
                         }
-                        echo "<a class='add-lesson' href='create_lesson.php'>Dodaj lekcje</a>";
                     } else {
                         echo "Brak lekcji.<br>";
                         echo "<a href='create_lesson.php'>Dodaj lekcje</a>";
                     }
                 ?>
                 </div>
+                        <a class='add-lesson' href='create_lesson.php'>Dodaj lekcje</a>
             </div>
         </div>
     </div>

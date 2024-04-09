@@ -550,7 +550,7 @@ form p {
 .profile-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  gap: 50px;
   width: 100%;
   flex-wrap: nowrap;
   margin: 80px 0;
@@ -559,7 +559,8 @@ form p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  justify-content: center;
+  width: 40%;
   flex-wrap: nowrap;
 }
 .profile-info {
@@ -567,7 +568,7 @@ form p {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 35%;
+  width: 50%;
   flex-wrap: nowrap;
   border: 1px solid var(--black);
   padding: 20px;
@@ -806,7 +807,6 @@ form p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
   flex-wrap: nowrap;
 }
 .profile-lessons h1 {
@@ -817,18 +817,24 @@ form p {
 .lesson-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   flex-wrap: nowrap;
   margin-top: 20px;
+}
+.lesson {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
 }
 .lesson-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   flex-wrap: nowrap;
   padding: 20px;
   border: 2px solid var(--black);
@@ -837,7 +843,25 @@ form p {
   text-decoration: none;
   color: #000;
 }
-
+.edit-lesson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  flex-wrap: nowrap;
+  padding: 20px;
+  border: 2px solid var(--black);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000;
+}
+.edit-lesson a {
+  font-size: 24px;
+  color: var(--gold);
+  text-decoration: underline;
+}
 .lesson-title {
   display: flex;
   flex-direction: column;
@@ -1009,4 +1033,68 @@ form p {
   padding: 20px 40px;
   color: var(--gold);
   background-color: var(--blue);
+}
+.lessons-container {
+  width: 100%;
+}
+.lesson-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid var(--black);
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 200;
+  cursor: pointer;
+}
+th a {
+  margin-left: 20px;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+td img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+td a {
+  text-decoration: none;
+  color: var(--gold);
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+select {
+  background-color: white;
+  color: black;
+  padding: 4px;
+  margin-left: 20px;
 }
