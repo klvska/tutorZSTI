@@ -37,13 +37,16 @@
                                 if(!empty($lesson['file'])) {
                                     echo "<a class='file' href='assets/uploads/{$lesson['file']}'>Pobierz plik</a>";
                                 }
+                                if(isset($_SESSION['user_id'])){
                                 echo "<form method='post'>";
                                 echo "<button type='submit' name='like'><img src='assets/icons/like.svg'>Like</button>";
                                 echo "<button type='submit' name='dislike'><img src='assets/icons/dislike.svg'>Dislike</button>";
                                 echo "</form>";
+                                
 
                                if(isset($_POST['like']) || isset($_POST['dislike'])) {
                                     $user_id = $_SESSION['user_id'];
+                                    $lesson_id = $lesson['id'];
                                     $action = isset($_POST['like']) ? 'like' : 'dislike';
 
                                     // Sprawdzenie, czy użytkownik już ocenił daną lekcję
@@ -59,12 +62,51 @@
                                         if($action === 'like') {
                                             $query_update_likes = "UPDATE lessons SET likes = likes + 1 WHERE id = $lesson_id";
                                             mysqli_query($conn, $query_update_likes);
+                                            // Count the total number of ratings
+                                            $query_total_ratings = "SELECT COUNT(*) AS total_ratings FROM user_actions WHERE lesson_id = $lesson_id";
+                                            $result_total_ratings = mysqli_query($conn, $query_total_ratings);
+                                            $row_total_ratings = mysqli_fetch_assoc($result_total_ratings);
+                                            $total_ratings = $row_total_ratings['total_ratings'];
+
+                                            // Count the number of likes
+                                            $query_likes = "SELECT COUNT(*) AS likes FROM user_actions WHERE lesson_id = $lesson_id AND action = 'like'";
+                                            $result_likes = mysqli_query($conn, $query_likes);
+                                            $row_likes = mysqli_fetch_assoc($result_likes);
+                                            $likes = $row_likes['likes'];
+
+                                            // Calculate the rating
+                                            $rating = ($likes / $total_ratings) * 5;
+                                            $rating = round($rating, 1);
+
+                                            // Update the ranking in the tutors table
+                                            $query_update_ranking = "UPDATE tutors SET rating = $rating WHERE id = {$lesson['tutor_id']}";
+                                            mysqli_query($conn, $query_update_ranking);
                                         } else {
                                             $query_update_dislikes = "UPDATE lessons SET dislikes = dislikes + 1 WHERE id = $lesson_id";
                                             mysqli_query($conn, $query_update_dislikes);
+                                            // Count the total number of ratings
+                                            $query_total_ratings = "SELECT COUNT(*) AS total_ratings FROM user_actions WHERE lesson_id = $lesson_id";
+                                            $result_total_ratings = mysqli_query($conn, $query_total_ratings);
+                                            $row_total_ratings = mysqli_fetch_assoc($result_total_ratings);
+                                            $total_ratings = $row_total_ratings['total_ratings'];
+
+                                            // Count the number of likes
+                                            $query_likes = "SELECT COUNT(*) AS likes FROM user_actions WHERE lesson_id = $lesson_id AND action = 'like'";
+                                            $result_likes = mysqli_query($conn, $query_likes);
+                                            $row_likes = mysqli_fetch_assoc($result_likes);
+                                            $likes = $row_likes['likes'];
+
+                                            // Calculate the rating
+                                            $rating = ($likes / $total_ratings) * 5;
+                                            $rating = round($rating, 1);
+
+                                            // Update the ranking in the tutors table
+                                            $query_update_ranking = "UPDATE tutors SET rating = $rating WHERE id = {$lesson['tutor_id']}";
+                                            mysqli_query($conn, $query_update_ranking);
                                         }
                                     }
                                 }
+                            }
                                 echo "<a href='lessons.php'>Powrót</a>";
                             } else {
                                 // Jeśli lekcja nie została znaleziona, wyświetl komunikat błędu

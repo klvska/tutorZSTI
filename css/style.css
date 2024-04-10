@@ -548,6 +548,10 @@ form p {
 .profile {
   width: 100%;
 }
+.profile-h1 a {
+  text-decoration: underline var(--gold);
+  color: var(--gold);
+}
 .profile-content {
   display: flex;
   flex-direction: row;
@@ -842,6 +846,7 @@ form p {
   border-radius: 15px;
   margin-bottom: 20px;
   text-decoration: none;
+  text-align: center;
   color: #000;
 }
 .edit-lesson {
@@ -880,6 +885,7 @@ form p {
   font-size: 16px;
   margin-top: 10px;
   margin-bottom: 0;
+  text-align: center;
 }
 .lesson-author {
   display: flex;

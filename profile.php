@@ -73,6 +73,9 @@
                     }
         ?>
             </div>
+        <?php 
+            if(isset($_SESSION["tutor_id"])){
+        ?>
             <div class="profile-lessons">
                 <h1>Twoje lekcje: </h1>
                 <div class="lesson-container">
@@ -117,9 +120,15 @@
                     } else {
                         echo "<h2>Brak lekcji.</h2><br>";
                     }
-                ?>
-                </div>
+                    ?> 
+                    </div>
                         <a class='add-lesson' href='create_lesson.php'>Dodaj lekcje</a>
+                    <?php
+                    } else {
+                    echo "<h1 class='profile-h1'><a href='tutor.php'>Zostan tutorem</a>,<br> zeby miec podglad swoich lekcji!.</h1><br>";
+                }
+                ?>
+                
             </div>
         </div>
     </div>
